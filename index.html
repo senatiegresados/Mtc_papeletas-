@@ -435,7 +435,7 @@
   </div>
 
 <!-- DATE -->
-  <div class="datebar">LIMA, 08 de May. de 2026</div>
+  <div class="datebar" id="fechaBar"></div>
 
   <!-- FORM -->
   <div class="form-section">
@@ -465,7 +465,7 @@
       <div class="form-field">
         <label>Captcha:</label>
         <div class="captcha-row">
-          <div class="captcha-img" id="captchaDisplay">510650</div>
+          <div class="captcha-img" id="captchaDisplay"></div>
           <button class="btn-refresh" onclick="genCaptcha()" title="Regenerar">↺</button>
         </div>
       </div>
@@ -538,7 +538,18 @@ const DB = {
   }
 };
 
-let captchaActual = "510650";
+let captchaActual = "";
+
+function initPage() {
+  // Fecha dinámica en español
+  const meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+  const hoy = new Date();
+  const fechaStr = `LIMA, ${String(hoy.getDate()).padStart(2,'0')} de ${meses[hoy.getMonth()]}. de ${hoy.getFullYear()}`;
+  document.getElementById("fechaBar").textContent = fechaStr;
+  // Captcha inicial aleatorio
+  genCaptcha();
+}
+initPage();
 
 function genCaptcha() {
   captchaActual = Math.floor(100000 + Math.random() * 900000).toString();
