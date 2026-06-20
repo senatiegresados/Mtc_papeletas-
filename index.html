@@ -535,6 +535,15 @@ const DB = {
     vigente: "09/04/2029",
     estado: "VIGENTE",
     papeletas: []
+  },
+  "46146308": {
+    nombre: "LLAMOJA NUÑEZ, EDUARDO MANUEL",
+    dni: "46146308",
+    licencia: "Q46146308",
+    clase: "A I",
+    vigente: "26/04/2029",
+    estado: "VIGENTE",
+    papeletas: []
   }
 };
 
@@ -580,7 +589,7 @@ function buscar() {
 
   const d = DB[val];
   if (!d) {
-    sec.innerHTML = `<p style="padding:14px 24px; font-size:13px; color:#555;">ℹ No se encontraron registros para: <strong>${val}</strong>.<br>Pruebe con: <strong>43089120</strong> / <strong>12345678</strong> / <strong>87654321</strong> / <strong>74075845</strong></p>`;
+    sec.innerHTML = `<p style="padding:14px 24px; font-size:13px; color:#555;">ℹ No se encontraron registros para: <strong>${val}</strong>.<br>Pruebe con: <strong>43089120</strong> / <strong>12345678</strong> / <strong>87654321</strong> / <strong>74075845</strong> / <strong>46146308</strong></p>`;
     return;
   }
 
